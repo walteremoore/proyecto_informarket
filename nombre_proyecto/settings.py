@@ -19,6 +19,7 @@ ALLOWED_HOSTS = []
 
 # LOGIN 
 LOGIN_REDIRECT_URL = reverse_lazy("inicio")
+LOGIN_URL = reverse_lazy("login")
 
 # Application definition
 
