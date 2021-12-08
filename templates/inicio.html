@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Mi primer proyecto en Django</title>
-</head>
-<body>
-    <h1>Hola {{usuario.nombre}}!</h1>
-    <h2>Soy una pagina de inicio</h2>
-    <ul>
-        {% for p in productos %}
-            <li> {{p.nombre}} - ${{p.precio}} </li>
-        {% endfor %}
-    </ul>
-</body>
+    <head>
+        <title>Mi primer proyecto en Django</title>
+    </head>
+    <body>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+        <h1>Hola {{usuario.nombre}}!</h1>
+        <h2>Soy una pagina de inicio</h2>
+        <ul>
+            {% for p in productos %}
+                <li> {{p.nombre}} - ${{p.precio}} </li>
+            {% endfor %}
+        </ul>
+    </body>
 </html>
