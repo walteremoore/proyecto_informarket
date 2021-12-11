@@ -1,1 +1,33 @@
 {% extends 'base/base.html' %}
+
+{% block contenido %}
+    <div class="row" style="padding:10px;">
+        <div class="col">
+            <a href="{% url 'productos:admin_nuevo' %}" class="btn btn-outline-success">Nuevo Producto</a>
+        </div>
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in productos %}
+                <tr>
+                    <th scope="row">{{p.id}}</th>
+                    <td>{{p.nombre}}</td>
+                    <td>${{p.precio}}</td>
+                    <td class="d-grid gap-2 d-md-block">
+                        <a href="#" class="btn btn-outline-info">Ver</a>
+                        <a href="{% url 'productos:admin_editar' p.id %}" class="btn btn-outline-primary">Editar</a>
+                        <a href="#" class="btn btn-outline-danger">Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

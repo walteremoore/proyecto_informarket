@@ -18,6 +18,5 @@ class Inicio(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Inicio, self).get_context_data(**kwargs)
         context["productos"] = Producto.objects.all()
-        context["info"] = "wadwadawdwadwwwwwwwwwwwwwwwwwwwww"
         return context
     
