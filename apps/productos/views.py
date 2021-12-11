@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from apps.productos.models import Producto
 from django.views.generic import ListView, CreateView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from .forms import ProductoForm
 from django.urls import reverse_lazy
 
@@ -34,3 +34,8 @@ class EditarAdmin(UpdateView):
 
     def get_success_url(self, **kwargs):
         return reverse_lazy("productos:admin_listar")
+
+class EliminarAdmin(DeleteView):
+    model = Producto
+    success_url = reverse_lazy("productos:admin_listar")
+    
